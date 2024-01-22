@@ -1,0 +1,38 @@
+/* 画面全体 */
+#game-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* 画像とキャラクターのフレームサイズいじるよ */
+  #image-frame {
+    position: relative;
+    width: 800px; /* 画像フレームの幅 */
+    height: 400px; /* 画像フレームの高さ */
+    border: 1px solid #ccc;
+    margin-bottom: 20px; /* 画像フレームとテキストフレームの間の余白 */
+    overflow: hidden; /* 余白を隠すために必要な場合 */
+  }
+  
+  /* 背景画像 */
+  #background {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* アスペクト比を維持 */
+  }
+  
+  /* キャラクターの画像の要素 */
+  #characters {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  
+  /* テキストフレーム */
+  #text-frame {
+    width: 800px; /* テキストフレームの幅(要調整) */
+    padding: 20px;
+    border: 1px solid #ccc;
+    text-align: left;
+  }
