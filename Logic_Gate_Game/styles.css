@@ -1,38 +1,55 @@
-/* 画面全体 */
 #game-screen {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+#image-frame {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 1px solid #ccc;
+  overflow: hidden;
+}
+
+#background {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#characters {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#text-frame {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.7); /* テキストボックスの背景色 */
+  text-align: left;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+/* 画面サイズが変わった場合のアスペクト比維持 */
+@media (max-aspect-ratio: 4/3) {
+  #game-screen {
+    height: 100vw * 3/4;
   }
-  
-  /* 画像とキャラクターのフレームサイズいじるよ */
-  #image-frame {
-    position: relative;
-    width: 800px; /* 画像フレームの幅 */
-    height: 400px; /* 画像フレームの高さ */
-    border: 1px solid #ccc;
-    margin-bottom: 20px; /* 画像フレームとテキストフレームの間の余白 */
-    overflow: hidden; /* 余白を隠すために必要な場合 */
+}
+
+@media (min-aspect-ratio: 16/9) {
+  #game-screen {
+    width: 100vh * 16/9;
   }
-  
-  /* 背景画像 */
-  #background {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* アスペクト比を維持 */
-  }
-  
-  /* キャラクターの画像の要素 */
-  #characters {
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
-  
-  /* テキストフレーム */
-  #text-frame {
-    width: 800px; /* テキストフレームの幅(要調整) */
-    padding: 20px;
-    border: 1px solid #ccc;
-    text-align: left;
-  }
+}
