@@ -1,1 +1,2 @@
-;背景素材のプリロード
+[preload  storage="./data/bgimage/brack.jpg"  ]
+[return]
